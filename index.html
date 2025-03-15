@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+  <script type="text/javascript" src="jquery-3.7.1.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+
+      <!--Menu Hamburguer-->
+
+      
+      <div class="menu-container-hamburguer">
+        <div class="hamburguer">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <span class="menu-text">MENU</span>
+      </div>
+      <!-------------------->
+      <!---Logo-->
+
+      <div class="logo">GMA Gifts</div>
+      <div class="rightside">
+
+
+      <!-- Whatsapp Link -->
+       <!-- <div class="login"><img src="imgs/login.ico" alt="login" style="width: 40px; height: 40px;"></div>
+       <div class="login" style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17);">Entrar</div>-->
+
+       <div class="login" style="text-align: center;"> <!-- Centraliza o conteúdo -->
+        <img src="imgs/login.ico" alt="login" style="width: 40px; height: 40px;">
+        <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;">Entrar</div> <!-- Espaçamento entre imagem e texto -->
+    </div>
+
+       
+      </div>
+      </nav>
+      <div class="secondbar">
+        <div class="searchbar">
+          <input type="text" placeholder="Buscar por produtos" name="searchb" id="searchb">
+          <button class="btnpesquisa" type="submit" id="searchButton">
+            <img src="imgs/searchico.webp" alt="Icone de pesquisa" id="iconepesquisa">
+          </button>
+        </div>
+      </div>
+      <!-- Menu ao clicar -->
+   <div class="leftmenu">
+      <div class="titleleftmenu" style="padding-bottom: 1em;">Categorias</div>
+	  <a href="index.html"><div>Início</div></a>
+      <a href="Mochilas/mochilas.php"><div class="mochilas">Mochilas</div></a>
+      <a href=""><div class="garrafas">Garrafas</div></a>
+      <a href=""> <div class="canetas">Canetas</div></a>
+      <a href=""><div class="sacolas">Sacolas</div></a>
+      <a href=""><div class="bolsas">Bolsas</div></a>
+      <a href=""><div class="cadernos">Cadernos</div></a>
+      <a href=""><div class="chaveiros">Chaveiros</div></a>
+      <a href=""><div class="copos">Copos</div></a>
+      <a href=""><div class="Canecas">Canecas</div></a>
+      <a href=""><div class="Carregadores">Carregadores</div></a>
+      <a href=""><div class="Carteiras">Carteiras</div></a>
+      <a href=""><div class="Cozinha">Cozinha</div></a>
+      <a href=""> <div class="Estojos">Estojos</div></a>
+      <a href=""><div class="Ferramentas">Ferramentas</div></a>
+      <a href=""><div class="Fone de ouvido">Fone de ouvido</div></a>
+      <a href=""> <div class="Guarda-chiva">Guarda-chuva</div></a>
+   </div>
+
+  </header>
+
+
+  <!--Menu esquerdo -->
+  <script>
+        var menu = document.querySelector(".hamburguer");
+        var leftmenu = document.querySelector(".leftmenu");
+
+        menu.addEventListener("click", function () {
+          leftmenu.classList.toggle("active");
+          menu.toggle("active")
+        });
+
+        leftmenu.addEventListener("mouseleave", function() {
+          leftmenu.classList.toggle("active");
+          menu.toggle("active")
+        });
+  </script>
+  
+<div class="banner-principal">
+  <div class="slides">
+      <div class="slide active"><img src="imgs/banner1.jpg" alt="Banner1" /></div>
+
+  </div>
+
+</div>
+
+<div class="separador"></div>
+<br><br>
+  <!-- Conjunto de Banners -->
+  
+  <div class="banner-corpo-home">
+    <div class="banner-item small">
+      <img src="imgs/banner-corpo/ex_banner.png" alt="Imagem Pequena 1">
+    </div>
+    <div class="banner-item small">
+      <img src="imgs/banner-corpo/promo.png" alt="Imagem Pequena 2">
+    </div>
+    <div class="banner-item small">
+      <img src="imgs/banner-corpo/exemplo.jpg" alt="Imagem Pequena 3">
+    </div>
+    <div class="banner-item large">
+      <img src="imgs/banner-corpo/oferta.png" alt="Imagem Grande">
+    </div>
+  </div>
+
+
+  <br><br>
+  <div class="separador1">
+    <h1 class="banner-titulo">ÚLTIMAS CHEGADAS</h1></div><br><br>
+<div class="banner-boletim-container">
+  
+  <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+
+  <div class="banner-boletim">
+
+      <div class="banner-boletim-items">
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem1.jpeg" alt="Descrição da Imagem 1">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem2.jpeg" alt="Descrição da Imagem 2">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem3.jpeg" alt="Descrição da Imagem 3">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem4.jpeg" alt="Descrição da Imagem 4">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem5.jpeg" alt="Descrição da Imagem 5">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem6.jpeg" alt="Descrição da Imagem 6">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem7.jpeg" alt="Descrição da Imagem 7">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem8.jpeg" alt="Descrição da Imagem 8">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem9.jpeg" alt="Descrição da Imagem 9">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem10.jpeg" alt="Descrição da Imagem 10">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem11.jpeg" alt="Descrição da Imagem 11">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem12.jpeg" alt="Descrição da Imagem 12">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem13.jpeg" alt="Descrição da Imagem 13">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem14.jpeg" alt="Descrição da Imagem 14">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem15.jpeg" alt="Descrição da Imagem 15">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem16.jpeg" alt="Descrição da Imagem 16">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem17.jpeg" alt="Descrição da Imagem 17">
+          </div>
+          <div class="banner-boletim-item">
+              <img src="imgs/boletim/imagem18.jpeg" alt="Descrição da Imagem 18">
+          </div>
+      </div>
+  </div>
+  <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+</div><br><br>
+
+<div class="separador1">
+  <h1 class="banner-titulo">LANÇAMENTOS</h1></div><br><br>
+  <div class="banner-boletim-container2">
+    <button class="prev" onclick="moveCarousel1(-1)">&#10094;</button> 
+  <div class="banner-boletim2">
+
+    <div class="banner-boletim-items2">
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/07048b.jpg" alt="Descrição da Imagem 1">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/08000.jpg" alt="Descrição da Imagem 2">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/08059.jpg" alt="Descrição da Imagem 3">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/08060.jpg" alt="Descrição da Imagem 4">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/08074.jpg" alt="Descrição da Imagem 5">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/18805.jpg" alt="Descrição da Imagem 6">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/02426.jpg" alt="Descrição da Imagem 7">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/18811.jpg" alt="Descrição da Imagem 8">
+        </div>
+        <div class="banner-boletim-item2">
+            <img src="imgs/lancamentos/18829.jpg" alt="Descrição da Imagem 9">
+        </div>
+    
+      </div>
+      </div>
+      <button class="next" onclick="moveCarousel1(1)">&#10095;</button>
+</div>
+<br><br><br>
+<div class="container-2-secao">
+  <div class="box-2-secao">Conteúdo 1</div>
+  <div class="box-2-secao">Conteúdo 2</div>
+  <div class="box-2-secao">Conteúdo 3</div>
+
+</div>
+
+<br><br><br>
+<div class="banner3-container">
+  <div class="banner3">
+    <iframe src="https://www.youtube.com/embed/OlSSFZzRh_o" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<br><br><br>
+
+<div id="fundo-escuro" onclick="fecharPopup()"></div>
+
+<div id="popup">
+    <span id="close-btn" onclick="fecharPopup()">&times;</span>
+    <h2>Fique por Dentro das Novidades!</h2>
+    <p>Quer receber as últimas novidades e ter acesso a ofertas exclusivas? Inscreva-se em nossa newsletter!</p>
+    <p>Ao se cadastrar, você receberá:</p>
+    <ul>
+        <li><strong>Lançamentos e atualizações</strong> diretamente no seu e-mail.</li>
+        <li><strong>Descontos e promoções especiais</strong> exclusivos para assinantes.</li>
+        <li><strong>Dicas e inspirações</strong> para aproveitar nossos produtos ao máximo.</li>
+    </ul>
+    <p>Prometemos não enviar spam — apenas conteúdo relevante para você.</p>
+
+    <form onsubmit="return assinarNewsletter();">
+        <input type="email" id="email" name="email" placeholder="E-mail" required
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Insira um e-mail válido.">
+        <button type="submit" id="subscribe-btn">Enviar</button>
+    </form>
+    <div id="message"></div> <!-- Elemento para exibir mensagens -->
+</div>
+
+<!-- Popup de Sucesso -->
+<div id="popup-sucesso" onclick="fecharPopupSucesso(event)">
+    <span id="close-sucesso-btn" onclick="fecharPopupSucesso(event)">&times;</span>
+    <h2>Sucesso!</h2>
+    <p id="sucesso-message"></p>
+</div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>GMA Gifts</h3>
+        <p>Soluções criativas para empresas de brindes.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p><i class="fas fa-phone"></i> (11) 1111-2222</p>
+        <p><i class="fas fa-envelope"></i> contato@gmagifts.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rua dos Brindes, 123, São Paulo, SP</p>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-icons">
+          <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 GMA Gifts. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

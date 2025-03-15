@@ -1,0 +1,397 @@
+* {
+  z-index: 0;
+}
+@font-face {
+  font-family: 'MPLUSRounded1c-Regularr'; /* Nome que você deseja usar */
+  src: 
+       url('MPLUSRounded1c-Regular.ttf') format('truetype'); /* Para TTF */
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 3000px;
+  padding-top: 130px;
+  background-color: #b0b4d371;
+  font-family: 'MPLUSRounded1c-Regular', sans-serif; /* Usando a fonte no corpo do documento */
+}
+
+/* Menu superior */
+
+header {
+  display: flex;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 90px;
+  z-index: 10;
+
+  
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 40px;
+  padding-left: 40px;
+  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  font-family: Verdana;
+}
+
+.hamburguer {
+  background-color: #ff6811;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.hamburguer.active {
+  display: none;
+}
+.hamburguer span {
+  margin-left: 10px; /* Ajuste o espaço entre o ícone e o texto */
+  font-size: 16px;   /* Tamanho da fonte para o texto */
+  color: rgb(255, 104, 17);      /* Cor do texto */
+}
+.menu-container-hamburguer {
+  display: flex;
+  align-items: center;
+}
+.menu-text {
+  margin-left: 10px; /* Espaço entre o ícone e o texto */
+  font-size: 16px;   /* Tamanho da fonte */
+  color: rgb(255, 104, 17); /* Cor do texto */
+}
+
+.logo {
+  font-size: 1.4em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 100px;
+  font-weight: bold;
+  color: rgb(255, 104, 17);
+}
+
+.line {
+  background-color: black;
+  width: 100%;
+  height: 2px;
+}
+
+.rightside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Barra de pesquisa */
+
+.secondbar {
+  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  display: flex;
+  position: absolute;
+  top: 90px;
+  left: 0px;
+  right: 0px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px rgba(54, 54, 54, 0.267);
+  padding-bottom: 10px;
+  border-style: none;
+}
+
+#searchb {
+  width: 240px;
+  margin-right: 0px;
+  height: 32px;
+  padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgba(228, 228, 228, 0.534);
+  padding-left: 8px;
+}
+
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#iconepesquisa {
+  width: 20px;
+  height: 20px;
+
+}
+
+.btnpesquisa {
+  margin-left: 0;
+  height: 34px;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: white;
+  border-width: 1px;
+  border-left-style: none;
+  border-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(228, 228, 228, 0.534);
+  cursor: pointer;
+}
+
+/* Menu esquerdo */
+
+.leftmenu {
+  display: none;
+}
+
+.leftmenu.active {  
+  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  width: 200px;
+  background-color: white;
+  justify-content: flex-start;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 20px;
+  padding-bottom: 1em;
+  font-family: Verdana;
+  border-radius: 8px;
+  border-right-style: solid;
+  border-style: none;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+.leftmenu a {
+
+  padding: 1em; /* Aplica um preenchimento em torno dos links */
+  color: rgb(255, 104, 17); /* Define a cor do texto dos links como branco */
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+/* Adiciona um efeito ao passar o mouse sobre os links do menu */
+.leftmenu a:hover {
+  background: rgb(66, 63, 63); /* Muda a cor de fundo ao passar o mouse */
+  border-radius: 5%; /* Arredonda as bordas do fundo do link */
+}
+
+.titleleftmenu {
+  font-size: 1.2em;
+  color: rgb(255, 104, 17);
+}
+/* começo código banner slide */
+.banner-principal {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin:  auto 0;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.8s ease;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  background-color: #ccc;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+/* Botões para navegação */
+.banner-principal button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.banner-principal button.left {
+  left: 10px;
+}
+
+.banner-principal button.right {
+  right: 10px;
+}
+.banner-principal img {
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+@media (max-width: 768px) {
+  .slide {
+      height: 12.5em; /* Reduz a altura em telas menores */
+      font-size: 1.5em; /* Ajusta o tamanho do texto */
+  }
+
+  button {
+      padding: 8px; /* Ajusta o padding dos botões */
+      font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+      height: 150px; /* Reduz ainda mais a altura */
+      font-size: 1.2em; /* Ajusta ainda mais o tamanho do texto */
+  }
+}
+
+.banner-corpo-home {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Coluna menor e maior */
+  grid-template-rows: repeat(3, 200px); /* Três linhas de 200px de altura */
+  gap: 20px; /* Espaçamento entre os banners */
+  padding: 5px;
+  width: 70%; 
+  margin: 0 auto; /* Centraliza o banner-container na página */
+}
+
+.banner-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1; /* Apenas para visualização, cor de fundo */
+  overflow: hidden; /* Garante que a imagem não ultrapasse o tamanho do banner */
+  position: relative;
+}
+
+.banner-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* A imagem se ajusta ao banner, mantendo a proporção */
+}
+
+.banner-item.large {
+  grid-column: 2 / 3; /* Ocupa a segunda coluna */
+  grid-row: 1 / span 3; /* Ocupa todas as três linhas */
+  height: 100%; /* Ocupar a altura completa definida na grid */
+}
+
+.banner-item.small {
+  grid-column: 1 / 2; /* Ocupa a primeira coluna */
+  height: auto;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .banner-corpo-home {
+      grid-template-columns: 1fr; /* Muda para 1 coluna em telas menores */
+  }
+
+  .banner-large {
+      height: 150px; /* Ajusta a altura para telas menores */
+  }
+
+  .banner-small {
+      height: 80px; /* Ajusta a altura para telas menores */
+  }
+}
+
+.banner-boletim-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  margin: 0 auto; /* Garante que o contêiner fique centralizado */
+  width: 100%; /* Largura do contêiner */
+}
+
+.banner-boletim {
+  overflow: hidden; /* Oculta itens fora do contêiner */
+  width: 100%; /* Largura total para responsividade */
+  max-width: 800px; /* Largura máxima do carrossel */
+}
+
+.banner-boletim-items {
+  display: flex; /* Flexbox para alinhar os itens em uma linha */
+  transition: transform 0.5s ease; /* Transição suave ao mover */
+}
+
+.banner-boletim-item {
+  flex: 1 0 30%; /* Cada item ocupa 16% do contêiner para 6 itens por linha */
+  height: 300px;
+
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+.banner-boletim-item img {
+  width: 100%; /* Faz a imagem ocupar toda a largura do item */
+  height: 100%; /* Faz a imagem ocupar toda a altura do item */
+  object-fit: cover; /* Garante que a imagem cubra o espaço disponível sem distorção */
+}
+.banner-titulo {
+  text-align: center; /* Centraliza o texto */
+ 
+  font-size: 2.5em;
+  font-weight: bold; /* Deixa o texto em negrito */
+  color:rgb(255, 104, 17);  
+}
+
+@media (max-width: 600px) {
+  .banner-boletim-item {
+      flex: 1 0 30%; /* Exibe 3 itens em telas menores */
+      height: 120px; /* Altura ajustada para telas menores */
+  }
+}
+
+@media (max-width: 400px) {
+  .banner-boletim-item {
+      flex: 1 0 45%; /* Exibe 2 itens em telas muito pequenas */
+      height: 100px; /* Altura ajustada para telas muito pequenas */
+  }
+}
+
+/*barra separar modulos*/
+.separador {
+  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  display: flex;
+ 
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px rgba(54, 54, 54, 0.267);
+  padding-bottom: 10px;
+  
+}
+

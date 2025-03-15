@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="../../footer.css">
+    <script src="script.js"></script>
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <<header>
+    <nav>
+
+      <!--Menu Hamburguer-->
+
+      
+      <div class="menu-container-hamburguer">
+        <div class="hamburguer">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <span class="menu-text">MENU</span>
+      </div>
+      <!-------------------->
+      <!---Logo-->
+
+      <div class="logo">GMA Gifts</div>
+      <div class="rightside">
+
+       <div class="login" style="text-align: center;">
+        <img src="../imgs/login.ico" alt="login" style="width: 40px; height: 40px;">
+        <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;">Entrar</div> 
+    </div>
+
+       
+      </div>
+      </nav>
+      <div class="secondbar">
+        <div class="searchbar">
+          <input type="text" placeholder="Buscar por produtos" name="searchb" id="searchb">
+          <button class="btnpesquisa" type="submit" id="searchButton">
+            <img src="imgs/searchico.webp" alt="Icone de pesquisa" id="iconepesquisa">
+          </button>
+        </div>
+      </div>
+      <!-- Menu ao clicar -->
+   <div class="leftmenu">
+      <div class="titleleftmenu" style="padding-bottom: 1em;">Categorias</div>
+	  <a href="../../index.html"><div>Início</div></a>
+      <a href="../mochilas.html"><div class="mochilas">Mochilas</div></a>
+      <a href=""><div class="garrafas">Garrafas</div></a>
+      <a href=""> <div class="canetas">Canetas</div></a>
+      <a href=""><div class="sacolas">Sacolas</div></a>
+      <a href=""><div class="bolsas">Bolsas</div></a>
+      <a href=""><div class="cadernos">Cadernos</div></a>
+      <a href=""><div class="chaveiros">Chaveiros</div></a>
+      <a href=""><div class="copos">Copos</div></a>
+      <a href=""><div class="Canecas">Canecas</div></a>
+      <a href=""><div class="Carregadores">Carregadores</div></a>
+      <a href=""><div class="Carteiras">Carteiras</div></a>
+      <a href=""><div class="Cozinha">Cozinha</div></a>
+      <a href=""> <div class="Estojos">Estojos</div></a>
+      <a href=""><div class="Ferramentas">Ferramentas</div></a>
+      <a href=""><div class="Fone de ouvido">Fone de ouvido</div></a>
+      <a href=""> <div class="Guarda-chiva">Guarda-chuva</div></a>
+   </div>
+
+  </header>
+
+  <!--Menu esquerdo -->
+  <script>
+        var menu = document.querySelector(".hamburguer");
+        var leftmenu = document.querySelector(".leftmenu");
+
+        menu.addEventListener("click", function () {
+          leftmenu.classList.toggle("active");
+          menu.toggle("active")
+        });
+
+        leftmenu.addEventListener("mouseleave", function() {
+          leftmenu.classList.toggle("active");
+          menu.toggle("active")
+        });
+  </script>
+    
+    <!--PÁGINA HTML DO PRODUTO DETALHADO-->
+    <!--JULIO-->
+
+    <div class="container_prod_detalhado">
+      <main class="produto_detalhado">
+          <div class="galeria_fotos">
+  
+              <!-- Zoom container com imagem principal -->
+              <div class="zoom-container">
+                  <button class="nav-button prev" onclick="prevImage()">&#10094;</button>
+                  <img id="mainImage" class="main-image" src="imgs/produtos_detalhados/mochila_notebook_preta.webp" alt="Imagem principal do produto">
+                  <button class="nav-button next" onclick="nextImage()">&#10095;</button>
+              </div>
+  
+              <!-- Miniaturas para troca de imagem -->
+              <div class="thumbnail-container">
+                  <img onclick="changeImage('imgs/produtos_detalhados/mochila_notebook_preta.webp')" src="imgs/produtos_detalhados/mochila_notebook_preta.webp" alt="Thumbnail 1" class="thumbnail">
+                  <img onclick="changeImage('imgs/produtos_detalhados/mochila_notebook_preta1.webp')" src="imgs/produtos_detalhados/mochila_notebook_preta1.webp" alt="Thumbnail 2" class="thumbnail">
+                  <img onclick="changeImage('imgs/produtos_detalhados/mochila_notebook_preta2.webp')" src="imgs/produtos_detalhados/mochila_notebook_preta2.webp" alt="Thumbnail 3" class="thumbnail">
+                  <img onclick="changeImage('imgs/produtos_detalhados/mochila_notebook_preta3.webp')" src="imgs/produtos_detalhados/mochila_notebook_preta3.webp" alt="Thumbnail 4" class="thumbnail">
+                  <img onclick="changeImage('imgs/produtos_detalhados/icone_video.png')" src="imgs/produtos_detalhados/icone_video.png" alt="Thumbnail 5" class="thumbnail">
+              </div>
+          </div>
+
+          <!-- Informações do produto -->
+          <div class="informacao_produto">
+              <h1>Mochila para Notebook Polo King 20 litros</h1>
+
+              <div class="descricao_produto">
+                  <p>Ideal para o profissional moderno, a Mochila para Notebook Polo King de 20 litros oferece o equilíbrio perfeito entre estilo, funcionalidade e durabilidade. Feita com materiais de alta qualidade, esta mochila garante proteção e praticidade para o seu dia a dia. Ideal para quem busca praticidade e estilo em uma só mochila, a Polo King é sua melhor escolha para acompanhar você em todas as suas jornadas.</p>
+
+                  <p><strong>Marca:</strong> Polo King</p>
+                  <p><strong>Código do produto:</strong> 03780</p>
+                  <p><strong>Dimensões do produto:</strong> 49 x 20 x 36 cm; 1,33 quilogramas</p>
+                  <p><strong>Sugestão de personalização:</strong> Patches | Bordado | Digital UV | Plaqueta</p>
+                  
+                  <h2>Características</h2>
+                  <ul>
+                      <li>Material: Poliéster resistente, garantindo durabilidade e resistência à água.</li>
+                      <li>Compartimentos: Vários compartimentos organizadores, incluindo um dedicado e acolchoado para notebook de até 15.6 polegadas.</li>
+                      <li>Design Ergonômico: Alças acolchoadas e ajustáveis, com painel traseiro acolchoado para maior conforto durante o uso prolongado.</li>
+                  </ul>
+                  
+                  <h2>Garantia</h2>
+                  <p>1 ano contra defeitos de fabricação.</p>
+              </div>
+          </div>
+        </main>
+
+  <!--Sugestões de produtos, aparece embaixo do produto principal-->
+  <div class="sugestoes">
+    <h2>Você vai se interessar</h2>
+    <div class="carrossel">
+        <button class="botao-carrossel anterior" onclick="slideAnterior()">&#10094;</button>
+        <div class="itens-carrossel">
+            <div class="item-carrossel">
+                <img src="imgs/produtos_detalhados/mochila_notebook_asus.webp" alt="Mochila para Notebook Asus">
+                <p>Mochila para Notebook Asus 03790</p>
+            </div>
+            <div class="item-carrossel">
+                <img src="imgs/produtos_detalhados/mochila_notebook_cavalera_atena.webp" alt="Mochila para Notebook Cavalera Atena">
+                <p>Mochila para Notebook Cavalera Atena 03800</p>
+            </div>
+            <div class="item-carrossel">
+                <img src="imgs/produtos_detalhados/mochila_notebook_rusty_age.webp" alt="Mochila para Notebook Rusty Haya">
+                <p>Mochila para Notebook Rusty Haya 03810</p>
+            </div>
+            <div class="item-carrossel">
+                <img src="imgs/produtos_detalhados/mochila_notebook_rusty_haya.webp" alt="Mochila para Notebook Rusty Age">
+                <p>Mochila para Notebook Rusty Age 03820</p>
+            </div>
+            <div class="item-carrossel">
+              <img src="imgs/produtos_detalhados/mochila_notebook_mormaii.webp" alt="Mochila para Notebook Mormaii - Preto">
+              <p>Mochila para Notebook Mormaii 03830</p>
+          </div>
+          <div class="item-carrossel">
+            <img src="imgs/produtos_detalhados/mochila_notebook_seanite.webp" alt="Mochila para Notebook Seanite - Preto">
+            <p>Mochila para Notebook Seanite 03840</p>
+        </div>
+        </div>
+        <button class="botao-carrossel proximo" onclick="slideProximo()">&#10095;</button>
+    </div>
+  </div>
+
+
+</div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>GMA Gifts</h3>
+        <p>Soluções criativas para empresas de brindes.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <ul>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p><i class="fas fa-phone"></i> (11) 1111-2222</p>
+        <p><i class="fas fa-envelope"></i> contato@gmagifts.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Rua dos Brindes, 123, São Paulo, SP</p>
+      </div>
+      <div class="footer-section">
+        <h3>Siga-nos</h3>
+        <div class="social-icons">
+          <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 GMA Gifts. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>

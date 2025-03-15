@@ -1,0 +1,13 @@
+INSERT INTO tblproduto (
+    id_familia, descricao_resumida, descricao, peso, medida, 
+    preco, cor, imagem_1, imagem_2, imagem_3, imagem_4, imagem_5, 
+    quantidade_estoque, id_tipo_material, id_categoria, ativo, video_url
+)
+VALUES
+(18518, 'Garrafa X', 'X, 400ml.', '100g', '13x6cm', 
+    25.50, 'Preto', 
+    (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\xampp\htdocs\TCC\Site Principal\Mochilas\imgs\mochilas\img1.jpg', SINGLE_BLOB) AS img), 
+    (SELECT BulkColumn FROM OPENROWSET(BULK 'C:\xampp\htdocs\TCC\Site Principal\Mochilas\imgs\mochilas\img11.jfif', SINGLE_BLOB) AS img), NULL, NULL, NULL, 
+    150, 1, 8, 1, NULL);
+
+
