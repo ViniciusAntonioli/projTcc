@@ -1,5 +1,17 @@
 <?php
+
+if (!defined('MY_APP')) {
+    /// Você pode redirecionar ou exibir uma mensagem de erro
+   // header('Location: mochilas.php');
+    //exit('Acesso direto não permitido.');
+}
+
+
 include 'conexao.php'; 
+
+
+
+// Esse arquivo exibe os produtos, e o incluí na página mochilas.php 
 
 $sql = "SELECT id_produto, descricao_resumida, descricao, preco FROM tblproduto WHERE ativo = 1";
 $stmt = $conn->prepare($sql);
@@ -11,7 +23,9 @@ $total_produtos = $stmt->rowCount();
 <p>Total de produtos encontrados: <?= $total_produtos; ?></p>
 
 <div class="products">
+    
     <?php foreach ($produtos as $produto): ?>
+        <a href="detalhes_produto.php?id=<?= $produto['id_produto']; ?>">
         <div class="product">
             <!-- A imagem inicial é a imagem 1 -->
             <img 
@@ -28,6 +42,7 @@ $total_produtos = $stmt->rowCount();
                 <p><strong>Preço:</strong> R$ <?= number_format($produto['preco'], 2, ',', '.'); ?></p>
             </div>
         </div>
+    </a>
     <?php endforeach; ?>
 </div>
 

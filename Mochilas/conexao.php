@@ -1,4 +1,5 @@
 <?php
+
 $serverName = "DESKTOP-L6F3F9R\SQLEXPRESS"; // Exemplo: "localhost" ou "192.168.1.100"
 $database = "CatalogoDeBrindes";
 $username = "sa"; // Exemplo: "sa"

@@ -20,7 +20,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100%
+  height: 100%;
   padding-top: 130px;
   background-color: #b0b4d371;
   font-family: 'MPLUSRounded1c-Regular', sans-serif;
@@ -169,6 +169,14 @@ nav {
   box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+button {
+  background-color: rgb(85, 85, 212);
+  color: white;
+  font-weight: bold;
+  border-radius: 2px;
+  padding: 1em 2em;
 }
 
 /* Links do menu esquerdo */

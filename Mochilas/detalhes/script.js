@@ -60,19 +60,9 @@ function changeImage(imageSrc) {
     updateThumbnails();
 }
 
-// Função para passar para a próxima imagem
-function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    document.getElementById("mainImage").src = images[currentImageIndex];
-    updateThumbnails();
-}
+// Nova função
 
-// Função para voltar à imagem anterior
-function prevImage() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    document.getElementById("mainImage").src = images[currentImageIndex];
-    updateThumbnails();
-}
+
 
 // Função para destacar a miniatura ativa
 function updateThumbnails() {

@@ -286,60 +286,13 @@
     <h3 onclick="limpa()" id="limpa">Limpar filtros</h3>
   </div>
   <hr />
-  <!--<div class="products">
-    <div class="product product-1">
-        <a href="detalhes/detalhes.html">
-            <img class="hover-img" id="m1" src="imgs/mochilas/1.webp" data-hover="1t.webp" alt="mochila 1">
-            <div class="details"><h2>01229</h2><p>Mochila para Notebook Polo King 20 litros</p></div>
-        </a>
-    </div>
-    <div class="product product-2">
-        <img class="hover-img" id="m2" src="imgs/mochilas/img2.jfif" data-hover="img2tras.jfif" alt="mochila 2">
-        <div class="details"><h2>01902</h2><p>Mochila couro sintético USB 23 litros</p></div>
-    </div>
-    <div class="product product-3">
-        <img class="hover-img" id="m3" src="imgs/mochilas/img3.jfif" data-hover="img3tras.jpg" alt="mochila 3">
-        <div class="details"><h2>06032</h2><p>Sacola de poliester</p></div>
-    </div>
-    <div class="product product-4">
-        <img class="hover-img" id="m4" src="imgs/mochilas/img4.jfif" data-hover="img4tras.jpg" alt="mochila 4">
-        <div class="details"><h2>01232</h2><p>Mochila Funcional Oxford 19 litros</p></div>
-    </div>
-    <div class="product product-5">
-        <img class="hover-img" id="m5" src="imgs/mochilas/img5.jfif" data-hover="img5tras.jpg" alt="mochila 5">
-        <div class="details"><h2>02414</h2><p>Mochila de Nylon 21 litros</p></div>
-    </div>
-    <div class="product product-6">
-        <img class="hover-img" id="m6" src="imgs/mochilas/img6.jpg" data-hover="img6tras.jpg" alt="mochila 6">
-        <div class="details"><h2>03782</h2><p>Mochila Nylon 23 litros</p></div>
-    </div>
-	    <div class="product product-7">
-        <img class="hover-img" id="m7" src="imgs/mochilas/img7.jfif" data-hover="img7tras.jpg" alt="mochila 7">
-        <div class="details"><h2>09238</h2><p>Mochila de Nylon 29 Litros</p></div>
-    </div>
-	    <div class="product product-8">
-        <img class="hover-img" id="m8" src="imgs/mochilas/img8.jfif" data-hover="img8tras.jpg" alt="mochila 8">
-        <div class="details"><h2>09283</h2><p>Mochila Nylon 43 litros</div>
-    </div>
-	    <div class="product product-9">
-        <img class="hover-img" id="m9" src="imgs/mochilas/img9.jfif" data-hover="img9tras.jpg" alt="mochila 9">
-        <div class="details"><h2>02903</h2><p>Bolsa Esportiva 46 litros</p></div>
-    </div>
-	    <div class="product product-10">
-        <img class="hover-img" id="m10" src="imgs/mochilas/img10.jfif" data-hover="img10tras.jpg" alt="mochila 10">
-        <div class="details"><h2>02888</h2><p>Sacola TNT</p></div>
-    </div>
-	    <div class="product product-11">
-        <img class="hover-img" id="m11" src="imgs/mochilas/img11.jfif" data-hover="img11tras.jpg" alt="mochila 11">
-        <div class="details"><h2>04521</h2><p>Sacola TNT</p></div>
-    </div>
-	    <div class="product product-12">
-        <img class="hover-img" id="m12" src="imgs/mochilas/img12.jfif" data-hover="img12tras.jpg" alt="mochila 12">
-        <div class="details"><h2>01222</h2><p>Mochila de Poliester USB 25 litros</p></div>
-    </div>
-</div> -->
+  
 <?php
-  include 'index.php';
+
+define('MY_APP', true);
+
+include 'index.php';
+
 ?>
 
 
