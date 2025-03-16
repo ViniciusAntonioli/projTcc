@@ -65,10 +65,13 @@ if (isset($_SESSION['user_id'])) {
       <div class="logo">GMA Gifts</div>
       <div class="rightside">
 
-       <div class="login" style="text-align: center;">
-        <a href="login/login.php"><img src="../imgs/login.ico" alt="login" style="width: 40px; height: 40px;"></a>
-        <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;"><?= $exibe ?></div> 
-    </div>
+      <div style="display: flex; gap: 2em;">
+      <a style="text-decoration: none; color: white;"href="ver_carrinho.php"><img src="../imgs/carrinho.png" alt="login" style="width: 40px; height: 40px;"></a>
+        <div class="login" style="text-align: center;">
+            <a href="login/login.php"><img src="../imgs/login.ico" alt="login" style="width: 40px; height: 40px;"></a>
+            <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;"><?= $exibe ?></div>
+        </div> 
+      </div>
 
        
       </div>
@@ -141,14 +144,44 @@ if (isset($_SESSION['user_id'])) {
                 <p><strong>Material:</strong> <?= htmlspecialchars($produto['nome_material']); ?></p>
                 <p><strong>Peso:</strong> <?= htmlspecialchars($produto['peso']); ?></p>
                 <p><strong>Dimensões:</strong> <?= htmlspecialchars($produto['medida']); ?></p>
-                <button style="
-  background-color: rgb(85, 85, 212);
-  color: white;
-  font-weight: bold;
-  border-radius: 2px;
-  padding: 1em 2em;
-  border: none;
-    ">Adicionar ao carrinho</button> <br />
+                <p>Quantidade em estoque: <?= htmlspecialchars($produto['quantidade_estoque']); ?></p>
+
+
+                <form id="addCarrinho">
+    <input type="hidden" name="id_produto" id="id_produto" value="<?= $produto['id_produto']; ?>">
+    Qtde: <input type="number" name="quantidade" id="quantidade" min="1" max="<?= htmlspecialchars($produto['quantidade_estoque']); ?>" value="1">
+    <br /><br />
+    <button type="button" id="btnAdicionar" style="
+        background-color: rgb(85, 85, 212);
+        color: white;
+        font-weight: bold;
+        border-radius: 2px;
+        padding: 1em 2em;
+        border: none;
+    ">Adicionar</button>
+</form>
+
+<div id="mensagem"></div>
+
+<script>
+document.getElementById('btnAdicionar').addEventListener('click', function() {
+    let id_produto = document.getElementById('id_produto').value;
+    let quantidade = document.getElementById('quantidade').value;
+
+    let formData = new FormData();
+    formData.append("id_produto", id_produto);
+    formData.append("quantidade", quantidade);
+
+    fetch('carrinho.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('mensagem').innerText = data.mensagem;
+    });
+});
+</script>
 
 
             </div>

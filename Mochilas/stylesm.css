@@ -87,8 +87,9 @@ nav {
 
 .rightside {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  background-color: red;
   gap: 2px;
 }
 

@@ -1,9 +1,7 @@
 <?php
-
 if (!defined('MY_APP')) {
-    /// Você pode redirecionar ou exibir uma mensagem de erro
-   // header('Location: mochilas.php');
-    //exit('Acesso direto não permitido.');
+   header('Location: mochilas.php');
+    die();
 }
 
 

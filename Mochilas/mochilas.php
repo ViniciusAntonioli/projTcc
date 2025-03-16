@@ -1,3 +1,16 @@
+<?php
+  session_start();
+
+  define('MY_APP', true);
+
+  if (isset($_SESSION['user_id'])) {
+    $exibe = $_SESSION['name_user'] . ", SAIR!";
+  } else {
+    $exibe = "Entrar";
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +43,17 @@
       <!---Logo-->
 
       <div class="logo">GMA Gifts</div>
-      <div class="rightside">
 
-       <div class="login" style="text-align: center;">
-        <img src="imgs/login.ico" alt="login" style="width: 40px; height: 40px;">
-        <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;">Entrar</div> 
-    </div>
 
+
+      <div style="display: flex; gap: 2em;">
+      <a style="text-decoration: none; color: white;"href="ver_carrinho.php"><img src="../imgs/carrinho.png" alt="login" style="width: 40px; height: 40px;"></a>
+        <div class="login" style="text-align: center;">
+            <a href="login/login.php"><img src="../imgs/login.ico" alt="login" style="width: 40px; height: 40px;"></a>
+            <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;"><?= $exibe ?></div>
+        </div> 
+      </div>
+    
        
       </div>
       </nav>
@@ -46,6 +63,9 @@
           <button class="btnpesquisa" type="submit" id="searchButton">
             <img src="imgs/searchico.webp" alt="Icone de pesquisa" id="iconepesquisa">
           </button>
+          
+
+
         </div>
       </div>
       <!-- Menu ao clicar -->
@@ -288,8 +308,6 @@
   <hr />
   
 <?php
-
-define('MY_APP', true);
 
 include 'index.php';
 
