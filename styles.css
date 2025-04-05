@@ -41,12 +41,12 @@ nav {
   width: 100%;
   padding-right: 40px;
   padding-left: 40px;
-  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  background: #00111f;
   font-family: Verdana;
 }
 
 .hamburguer {
-  background-color: #ff6811;
+  background-color: #ffffff;
     width: 30px;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ nav {
 .hamburguer span {
   margin-left: 10px; /* Ajuste o espaço entre o ícone e o texto */
   font-size: 16px;   /* Tamanho da fonte para o texto */
-  color: rgb(255, 104, 17);      /* Cor do texto */
+  color: rgb(255, 255, 255);      /* Cor do texto */
 }
 .menu-container-hamburguer {
   display: flex;
@@ -70,15 +70,14 @@ nav {
 .menu-text {
   margin-left: 10px; /* Espaço entre o ícone e o texto */
   font-size: 16px;   /* Tamanho da fonte */
-  color: rgb(255, 104, 17); /* Cor do texto */
+  color: rgb(255, 255, 255); /* Cor do texto */
 }
 
 .logo {
   font-size: 1.4em;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 100px;
   font-weight: bold;
-  color: rgb(255, 104, 17);
+  color: rgb(255, 255, 255);
 }
 
 .line {
@@ -97,13 +96,13 @@ nav {
 /* Barra de pesquisa */
 
 .secondbar {
-  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  background: #00111f;
   display: flex;
   position: absolute;
   top: 90px;
   left: 0px;
   right: 0px;
-  height: 40px;
+  height: 55px;
   justify-content: center;
   align-items: center;
   border-bottom-style: solid;
@@ -124,7 +123,7 @@ nav {
   border-color: rgba(0, 0, 0, 0.3);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color: rgba(228, 228, 228, 0.534);
+  background-color: rgba(255, 255, 255  );
   padding-left: 8px;
 }
 
@@ -164,7 +163,7 @@ nav {
   border-width: 1px;
   border-left-style: none;
   border-color: rgba(0, 0, 0, 0.3);
-  background-color: rgba(228, 228, 228, 0.534);
+  background-color: rgba(255, 255, 255, 0.534);
   cursor: pointer;
 }
 
@@ -200,7 +199,7 @@ nav {
 .leftmenu a {
 
   padding: 1em; /* Aplica um preenchimento em torno dos links */
-  color: rgb(255, 104, 17); /* Define a cor do texto dos links como branco */
+  color: rgb(255, 255, 255); /* Define a cor do texto dos links como branco */
   text-decoration: none; /* Remove o sublinhado dos links */
 }
 
@@ -212,9 +211,10 @@ nav {
 
 .titleleftmenu {
   font-size: 1.2em;
-  color: rgb(255, 104, 17);
+  color: rgb(255, 255, 255);
 }
-/* começo código banner slide */
+
+/* 
 .banner-principal {
   position: relative;
   width: 100%;
@@ -238,6 +238,267 @@ nav {
   align-items: center;
   font-size: 2em;
 }
+*/
+
+/*Carrossel*/
+.slider{
+  margin: 0 auto;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides{
+  width: 400%;
+  height: 400px;
+  display: flex;
+
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 25%;
+  position: relative;
+  transition: 2s;
+}
+
+.slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.manual-navigation{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.manual-btn{
+  border: 2px solid #00111f;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+   background-color: #00111f;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -50%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -75%;
+}
+
+.navigation-auto div{
+  border: 2px solid #00111f;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.navigation-auto{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background-color: #00111f;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background-color: #00111f;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background-color: #00111f;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background-color: #00111f;
+}
+/*Fim Carrossel*/
+
+
+/*Produtos Destaque*/
+.cols{
+  display: grid;
+  justify-content: space-evenly;
+  padding: 2rem 1rem;
+}
+
+.cols-4 img{
+  max-width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.cols-4{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.cols>*{
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cols>*:hover{
+  transform: translateY(-5px);
+}
+
+.titulo-secao{
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.linha-subtitulo{
+  width: 100px;
+  height: 5px;
+  background: #014060;
+  border-radius: 9999px;
+  margin: 8px auto 0 auto;
+}
+
+.produto{
+  border-radius: 10px;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  background-color: #ffffff;
+  color: #00111f;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nome-produto{
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+.desconto-produto{
+  color: #666;
+  font-size: 1.2rem;
+  margin-top: 0rem;
+  text-decoration: line-through;
+}
+
+.preco-produto{
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-top: 0rem;
+}
+/*Fim Produtos Destaque*/
+
+
+/*Mochilas Destaque*/
+
+.cols-5 img{
+  max-width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.cols-5{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+}
+
+.titulo-categoria{
+  text-align: start;
+  margin-top: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.8rem;
+  padding-top: 2rem;
+}
+
+.link-categoria{
+  font-size: 1rem;
+}
+
+.link-categoria a {
+  text-decoration: none;
+  color: #014060;
+}
+
+div.mochilas-destaque{
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 1rem;
+}
+
+/*Fim Mochilas Destaque*/
+
+
+/*Produtos Destaque*/
+
+.cols-6 img{
+  max-width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.cols-6{
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.categoria{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.nome-categoria{
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  background-color: #00111f;
+  width: 100%;  /* Garante que ocupa toda a largura */
+  padding: 1rem 0; /* Adiciona um espaçamento interno */
+  margin-top: auto; /* Faz com que o nome da categoria sempre vá para o final */
+  border-radius: 0 0 10px 10px; /* Para suavizar os cantos inferiores */
+  display: flex;
+  justify-content: center; /* Centraliza o texto */
+  align-items: center; /* Alinha verticalmente */
+}
+
+/*Fim Produtos Destaque*/
+
+
 
 /* Botões para navegação */
 .banner-principal button {
@@ -258,24 +519,27 @@ nav {
 
 }
 
+/*
 @media (max-width: 768px) {
   .slide {
-      height: 200px; /* Reduz a altura em telas menores */
-      font-size: 1.5em; /* Ajusta o tamanho do texto */
+      height: 200px; 
+      font-size: 1.5em; 
   }
 
   button {
-      padding: 8px; /* Ajusta o padding dos botões */
+      padding: 8px; 
       font-size: 1.2em;
   }
 }
 
 @media (max-width: 480px) {
   .slide {
-      height: 150px; /* Reduz ainda mais a altura */
-      font-size: 1.2em; /* Ajusta ainda mais o tamanho do texto */
+      height: 150px; 
+      font-size: 1.2em; 
   }
 }
+*/
+
 
 .banner-corpo-home {
   display: grid;
@@ -427,9 +691,9 @@ button.prev:hover, button.next:hover {
 
 /*barra separar modulos*/
 .separador {
-  background: radial-gradient(circle at center, #014060 0%, #00111f 100%);
+  background: #00111f;
   display: flex;
-  height: 40px;
+  height: 10px;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);

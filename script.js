@@ -1,3 +1,5 @@
+/*
+
 let currentSlide = 0;
 
 function changeSlide(direction) {
@@ -58,6 +60,31 @@ function moveCarousel1(direction) {
     const offset = -currentIndex * itemWidth; 
     document.querySelector('.banner-boletim-items2').style.transform = `translateX(${offset}px)`;
 }
+
+*/
+
+/*carrossel home*/
+let count = 1;
+
+document.getElementById("radio1").checked = true;
+
+setInterval( function(){
+    nextImage();
+}, 7000)
+
+function nextImage(){
+    count++;
+    if(count>4){
+        count = 1;
+    }
+
+    document.getElementById("radio"+count).checked = true;
+
+
+}
+
+/*Fim carrossel home*/
+
 
 function abrirPopup() {
     document.getElementById("popup").style.display = "block";

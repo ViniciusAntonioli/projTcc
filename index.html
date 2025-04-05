@@ -6,11 +6,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="footer.css">
   <script type="text/javascript" src="jquery-3.7.1.js"></script>
-  <script src="script.js"></script>
   <link rel="stylesheet" href="styles.css">
   <title>Document</title>
 </head>
-<body>
+<body> 
 
   <header>
     <nav>
@@ -29,7 +28,11 @@
       <!-------------------->
       <!---Logo-->
 
-      <div class="logo">GMA Gifts</div>
+      <div class="logo">
+        <img src="imgs/brindou.com logo1.png" alt="Brindou.com"/>
+        
+      </div>
+
       <div class="rightside">
 
 
@@ -39,7 +42,7 @@
 
        <div class="login" style="text-align: center;"> <!-- Centraliza o conteúdo -->
         <img src="imgs/login.ico" alt="login" style="width: 40px; height: 40px;">
-        <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 104, 17); margin-top: 5px;">Entrar</div> <!-- Espaçamento entre imagem e texto -->
+        <div style="font-weight: bold; font-size: 0.8em; color: rgb(255, 255, 255); margin-top: 5px;">Entrar</div> <!-- Espaçamento entre imagem e texto -->
     </div>
 
        
@@ -49,7 +52,7 @@
         <div class="searchbar">
           <input type="text" placeholder="Buscar por produtos" name="searchb" id="searchb">
           <button class="btnpesquisa" type="submit" id="searchButton">
-            <img src="imgs/searchico.webp" alt="Icone de pesquisa" id="iconepesquisa">
+            <img src="imgs/searchico.png" alt="Icone de pesquisa" id="iconepesquisa">
           </button>
         </div>
       </div>
@@ -93,7 +96,8 @@
           menu.toggle("active")
         });
   </script>
-  
+
+<!--
 <div class="banner-principal">
   <div class="slides">
       <div class="slide active"><img src="imgs/banner1.jpg" alt="Banner1" /></div>
@@ -101,9 +105,99 @@
   </div>
 
 </div>
+-->
+
+<div class="slider">
+
+  <div class="slides">
+    <!--Radio Buttons-->
+    <input type="radio" name="radio-btn" id="radio1">
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+    <input type="radio" name="radio-btn" id="radio4">
+    <!--Fim Radio Buttons-->
+
+    <!--Slide images-->
+    <div class="slide first">
+      <img src="imgs/Slider/slider1a.jpg" alt="Imagem 1">
+    </div>
+    <div class="slide">
+      <img src="imgs/Slider/slider2a.jpg" alt="Imagem 2">
+    </div>
+    <div class="slide">
+      <img src="imgs/Slider/slider3a.jpg" alt="Imagem 3">
+    </div>
+    <div class="slide">
+      <img src="imgs/Slider/slider4a.jpg" alt="Imagem 4">
+    </div>
+    <!--Fim Slide images-->
+
+    <!--Navigation auto-->
+    <div class="navigation-auto">
+      <div class="auto-btn1"></div>
+      <div class="auto-btn2"></div>
+      <div class="auto-btn3"></div>
+      <div class="auto-btn4"></div>
+    </div>
+    <!--Fim Navigation auto-->
+
+  </div>
+
+  <div class="manual-navigation">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+    <label for="radio3" class="manual-btn"></label>
+    <label for="radio4" class="manual-btn"></label>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
 
 <div class="separador"></div>
 <br><br>
+
+
+<!--Produtos Destaque-->
+
+<div class="produtos-destaque-background">
+  <div class="produtos-destaque">
+    <h3 class="titulo-secao">Produtos Destaque</h3>
+    <div class="linha-subtitulo"></div>
+      <div class="cols cols-4">
+        <div class="produto">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <p class="nome-produto">Mochila Azul</p>
+          <p class="desconto-produto">R$ 80,00</p>
+          <p class="preco-produto"><span>R$</span> 60,00</p>
+        </div> 
+        <div class="produto">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <p class="nome-produto">Mochila Azul</p>
+          <p class="desconto-produto">R$ 80,00</p>
+          <p class="preco-produto"><span>R$</span> 60,00</p>
+        </div>
+        <div class="produto">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <p class="nome-produto">Mochila Azul</p>
+          <p class="desconto-produto">R$ 80,00</p>
+          <p class="preco-produto"><span>R$</span> 60,00</p>
+        </div>
+        <div class="produto">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <p class="nome-produto">Mochila Azul</p>
+          <p class="desconto-produto">R$ 80,00</p>
+          <p class="preco-produto"><span>R$</span> 60,00</p>
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Fim Produtos Destaque-->
+
+
   <!-- Conjunto de Banners -->
   
   <div class="banner-corpo-home">
@@ -123,120 +217,151 @@
 
 
   <br><br>
-  <div class="separador1">
-    <h1 class="banner-titulo">ÚLTIMAS CHEGADAS</h1></div><br><br>
-<div class="banner-boletim-container">
-  
-  <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
 
-  <div class="banner-boletim">
 
-      <div class="banner-boletim-items">
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem1.jpeg" alt="Descrição da Imagem 1">
+  <!--Seção Mochilas-->
+
+  <div class="mochilas-destaque-background">
+    <div class="mochilas-destaque">
+      <h3 class="titulo-categoria">Mochilas <span class="link-categoria"><a href="Mochilas/mochilas.php">Ir para seção Mochilas</a></span></h3>
+        <div class="cols cols-5">
+          <div class="produto">
+            <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+            <p class="nome-produto">Mochila Azul</p>
+            <p class="desconto-produto">R$ 80,00</p>
+            <p class="preco-produto"><span>R$</span> 60,00</p>
+          </div> 
+          <div class="produto">
+            <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+            <p class="nome-produto">Mochila Azul</p>
+            <p class="desconto-produto">R$ 80,00</p>
+            <p class="preco-produto"><span>R$</span> 60,00</p>
           </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem2.jpeg" alt="Descrição da Imagem 2">
+          <div class="produto">
+            <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+            <p class="nome-produto">Mochila Azul</p>
+            <p class="desconto-produto">R$ 80,00</p>
+            <p class="preco-produto"><span>R$</span> 60,00</p>
           </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem3.jpeg" alt="Descrição da Imagem 3">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem4.jpeg" alt="Descrição da Imagem 4">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem5.jpeg" alt="Descrição da Imagem 5">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem6.jpeg" alt="Descrição da Imagem 6">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem7.jpeg" alt="Descrição da Imagem 7">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem8.jpeg" alt="Descrição da Imagem 8">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem9.jpeg" alt="Descrição da Imagem 9">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem10.jpeg" alt="Descrição da Imagem 10">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem11.jpeg" alt="Descrição da Imagem 11">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem12.jpeg" alt="Descrição da Imagem 12">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem13.jpeg" alt="Descrição da Imagem 13">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem14.jpeg" alt="Descrição da Imagem 14">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem15.jpeg" alt="Descrição da Imagem 15">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem16.jpeg" alt="Descrição da Imagem 16">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem17.jpeg" alt="Descrição da Imagem 17">
-          </div>
-          <div class="banner-boletim-item">
-              <img src="imgs/boletim/imagem18.jpeg" alt="Descrição da Imagem 18">
-          </div>
+          <div class="produto">
+            <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+            <p class="nome-produto">Mochila Azul</p>
+            <p class="desconto-produto">R$ 80,00</p>
+            <p class="preco-produto"><span>R$</span> 60,00</p>
+          </div>      
+        </div>
       </div>
+    </div>
   </div>
-  <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-</div><br><br>
 
-<div class="separador1">
-  <h1 class="banner-titulo">LANÇAMENTOS</h1></div><br><br>
-  <div class="banner-boletim-container2">
-    <button class="prev" onclick="moveCarousel1(-1)">&#10094;</button> 
-  <div class="banner-boletim2">
+  <!--Fim Seção Mochilas-->
 
-    <div class="banner-boletim-items2">
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/07048b.jpg" alt="Descrição da Imagem 1">
+  <br>
+
+    <!--Seção Garrafas-->
+
+    <div class="mochilas-destaque-background">
+      <div class="mochilas-destaque">
+        <h3 class="titulo-categoria">Garrafas <span class="link-categoria"><a href="Mochilas/mochilas.php">Ir para seção Garrafas</a></span></h3>
+          <div class="cols cols-5">
+            <div class="produto">
+              <img src="/imgs/produtos/mochila1.jpg" alt="garrafa"/>
+              <p class="nome-produto">Garrafa Azul</p>
+              <p class="desconto-produto">R$ 80,00</p>
+              <p class="preco-produto"><span>R$</span> 60,00</p>
+            </div> 
+            <div class="produto">
+              <img src="/imgs/produtos/mochila1.jpg" alt="garrafa"/>
+              <p class="nome-produto">Garrafa Azul</p>
+              <p class="desconto-produto">R$ 80,00</p>
+              <p class="preco-produto"><span>R$</span> 60,00</p>
+            </div>
+            <div class="produto">
+              <img src="/imgs/produtos/mochila1.jpg" alt="garrafa"/>
+              <p class="nome-produto">Garrafa Azul</p>
+              <p class="desconto-produto">R$ 80,00</p>
+              <p class="preco-produto"><span>R$</span> 60,00</p>
+            </div>
+            <div class="produto">
+              <img src="/imgs/produtos/mochila1.jpg" alt="garrafa"/>
+              <p class="nome-produto">Garrafa Azul</p>
+              <p class="desconto-produto">R$ 80,00</p>
+              <p class="preco-produto"><span>R$</span> 60,00</p>
+            </div>      
+          </div>
         </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/08000.jpg" alt="Descrição da Imagem 2">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/08059.jpg" alt="Descrição da Imagem 3">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/08060.jpg" alt="Descrição da Imagem 4">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/08074.jpg" alt="Descrição da Imagem 5">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/18805.jpg" alt="Descrição da Imagem 6">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/02426.jpg" alt="Descrição da Imagem 7">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/18811.jpg" alt="Descrição da Imagem 8">
-        </div>
-        <div class="banner-boletim-item2">
-            <img src="imgs/lancamentos/18829.jpg" alt="Descrição da Imagem 9">
-        </div>
-    
       </div>
+    </div>
+  
+    <!--Fim Seção Garrafas-->
+
+    <br>
+
+    <!--Categorias-->
+
+<div class="categorias-destaque-background">
+  <div class="categorias-destaque">
+    <h3 class="titulo-secao">Categorias</h3>
+    <div class="linha-subtitulo"></div>
+      <div class="cols cols-6">
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Mochilas</p>
+          </div>  
+        </div> 
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Garrafas</p>
+          </div>  
+        </div>
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Canetas</p>
+          </div>
+        </div>
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Sacolas</p>
+          </div>
+        </div>
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Bolsas</p>
+          </div>  
+        </div> 
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Cadernos</p>
+          </div>  
+        </div>
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Chaveiros</p>
+          </div>
+        </div>
+        <div class="categoria">
+          <img src="/imgs/produtos/mochila1.jpg" alt="mochila"/>
+          <div class="nome-categoria">
+            <p class="txt-categoria">Copos</p>
+          </div>
+        </div>
       </div>
-      <button class="next" onclick="moveCarousel1(1)">&#10095;</button>
+    </div>
+  </div>
 </div>
+
+<!--Fim Produtos Destaque-->
+
 <br><br><br>
-<div class="container-2-secao">
-  <div class="box-2-secao">Conteúdo 1</div>
-  <div class="box-2-secao">Conteúdo 2</div>
-  <div class="box-2-secao">Conteúdo 3</div>
 
-</div>
+  
 
 <br><br><br>
 <div class="banner3-container">
@@ -245,6 +370,7 @@
   </div>
 </div>
 <br><br><br>
+
 
 <div id="fundo-escuro" onclick="fecharPopup()"></div>
 
@@ -277,7 +403,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-section">
-        <h3>GMA Gifts</h3>
+        <h3>Brindou.com</h3>
         <p>Soluções criativas para empresas de brindes.</p>
       </div>
       <div class="footer-section">
@@ -292,7 +418,7 @@
       <div class="footer-section">
         <h3>Contato</h3>
         <p><i class="fas fa-phone"></i> (11) 1111-2222</p>
-        <p><i class="fas fa-envelope"></i> contato@gmagifts.com</p>
+        <p><i class="fas fa-envelope"></i> contato@brindou.com</p>
         <p><i class="fas fa-map-marker-alt"></i> Rua dos Brindes, 123, São Paulo, SP</p>
       </div>
       <div class="footer-section">
@@ -306,7 +432,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 GMA Gifts. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Brindou.com - Todos os direitos reservados.</p>
     </div>
   </footer>
 

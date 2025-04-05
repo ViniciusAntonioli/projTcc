@@ -25,6 +25,7 @@
   <title>Categorias</title>
 </head>
 <body>
+
   <header>
     <nav>
 
@@ -67,7 +68,8 @@
 
 
         </div>
-      </div>
+      </div> 
+        
       <!-- Menu ao clicar -->
    <div class="leftmenu">
       <div class="titleleftmenu" style="padding-bottom: 1em;">Categorias</div>
