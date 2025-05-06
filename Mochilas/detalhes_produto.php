@@ -1,4 +1,4 @@
-<?php
+  <?php
 session_start();
 
 include 'conexao.php';
@@ -62,7 +62,10 @@ if (isset($_SESSION['user_id'])) {
       <!-------------------->
       <!---Logo-->
 
-      <div class="logo">GMA Gifts</div>
+      <div class="logo">
+      <img src="../imgs/brindou.com logo1.png" alt="Brindou.com"/>
+
+      </div>
       <div class="rightside">
 
       <div style="display: flex; gap: 2em;">
@@ -164,22 +167,32 @@ if (isset($_SESSION['user_id'])) {
 <div id="mensagem"></div>
 
 <script>
-document.getElementById('btnAdicionar').addEventListener('click', function() {
+  document.getElementById('btnAdicionar').addEventListener('click', function() {
     let id_produto = document.getElementById('id_produto').value;
-    let quantidade = document.getElementById('quantidade').value;
+    let quantidade = parseInt(document.getElementById('quantidade').value);  // Convertendo para inteiro
 
-    let formData = new FormData();
-    formData.append("id_produto", id_produto);
-    formData.append("quantidade", quantidade);
+    // Verificando se a quantidade é válida
+    if (quantidade < 1 || quantidade > <?= htmlspecialchars($produto['quantidade_estoque']); ?>) {
+        alert("Quantidade inválida. A quantidade deve ser entre 1 e " + <?= htmlspecialchars($produto['quantidade_estoque']); ?>);
+        return;
+    } else {
+        let formData = new FormData();
+        formData.append("id_produto", id_produto);
+        formData.append("quantidade", quantidade);
 
-    fetch('carrinho.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('mensagem').innerText = data.mensagem;
-    });
+        fetch('carrinho.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('mensagem').innerText = data.mensagem;
+
+            if (data.success) {
+                window.location.href = "ver_carrinho.php";
+            }
+        });
+    }
 });
 </script>
 

@@ -37,7 +37,7 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
                 <?= htmlspecialchars($produto['descricao_resumida']); ?> - 
                 <?= $_SESSION['carrinho'][$produto['id_produto']]; ?> unidades - 
-                R$ <?= number_format($produto['preco'], 2, ',', '.'); ?>
+                R$ <?= number_format($produto['preco'] * $_SESSION['carrinho'][$produto['id_produto']], 2, ',', '.'); ?>
                 <a href="remover_carrinho.php?id=<?= $produto['id_produto']; ?>">Remover</a>
                 </li>
         <?php endforeach; ?>

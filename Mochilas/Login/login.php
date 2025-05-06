@@ -1,14 +1,15 @@
 <?php
 include "../conexao.php";
-session_start(); // Inicia a sessão antes de qualquer saída
+session_start();
 
+// Se já estiver logado, encerra a sessão e redireciona
 if (isset($_SESSION['user_id'])) {
-    // Se já estiver logado, redireciona para a página inicial
     session_destroy();
     header('Location: ../mochilas.php');
-
     exit();
 }
+
+$error = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = trim($_POST['user']);
@@ -21,18 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
 
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+        
 
-        if ($usuario['nome_empresa'] == $user && $usuario['senha'] == $pass) {
-            
+        if ($usuario && password_verify($pass, $usuario['senha'])) {
             $_SESSION['user_id'] = $usuario['id_cliente'];
             $_SESSION['name_user'] = $usuario['nome_empresa'];
             header('Location: ../mochilas.php');
             exit();
         } else {
-            echo "<script>alert('Usuário ou senha incorretos!');</script>";
+            $error = 'Usuário ou senha incorretos.';
         }
     } else {
-        echo "<script>alert('Preencha todos os campos!');</script>";
+        $error = 'Preencha todos os campos!';
     }
 }
 ?>
@@ -52,7 +53,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form method="post" action="login.php">
                 Usuário: <input type="text" name="user" required /> <br /><br />
                 Senha: <input type="password" name="pass" required /> <br /><br />
-                <input type="submit" value="Entrar" />
+                <p>Esqueceu a senha? <a href="solicitar_recuperacao.php">Recuperar Senha</a></p>
+                <?php if (!empty($error)): ?>
+                    <p id="wrong" style="color:red;"><?= htmlspecialchars($error) ?></p>
+                <?php endif; ?>
+                <input style="
+                width: 100%;
+    height: 40px;
+    background-color: rgb(78, 78, 216);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;" type="submit" value="Entrar" /> <br /><br /><br /><br /><br />
+                <p>Voltar para a página inicial? <a href="../mochilas.php">Página Inicial</a></p>
             </form>
         </div>
     </div>

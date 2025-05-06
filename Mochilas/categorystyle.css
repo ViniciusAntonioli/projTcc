@@ -54,17 +54,12 @@ body {
 }
 
 .product {
-  background: radial-gradient(circle at center, #0b74a8 0%, #79a6ca 100%);
   border: none;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-  color: white;
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
-  border-bottom-left-radius: 4%;
-  border-bottom-right-radius: 4%;
-  border-top-left-radius: 4%;
-  border-top-right-radius: 4%;
   overflow: hidden;
   transition: all 0.4s;
   cursor: pointer;
@@ -76,8 +71,34 @@ body {
   padding-right: 6px;
   display: flex;
   flex-direction: column;
+  height: 320px;
   
 }
+
+.details {
+  padding-left: 10px;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 290px;
+  
+}
+.details {
+  padding-left: 10px;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  
+}
+.details h1 {
+  font-size: 22px;
+}
+
+.details p {
+  font-size: 24px;
+}
+
 
 
 
@@ -124,7 +145,7 @@ body {
   clip-path: polygon(0 0, 100% 0, 95% 50%, 100% 100%, 0 100%, 0 50%);
   height: 120px;
   width: 90vh;
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-right: 40px;
   margin-top: 40px;
@@ -136,7 +157,7 @@ body {
   align-items: center;
   border: none;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-  background: radial-gradient(circle, rgb(245, 164, 88) 46%, rgb(250, 183, 138) 100%);
+  background: radial-gradient(circle, #022a4b 46%, #023c6b 100%);
   
 }
 

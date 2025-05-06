@@ -11,3 +11,13 @@ VALUES
     150, 1, 8, 1, NULL);
 
 
+-------------
+06/05/2025
+
+CREATE TABLE password_resets (
+    id INT identity PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    expires_at DATETIME NOT NULL
+);
+Adicionar essa tabela ao banco para funcionar recuperação de senhas!

@@ -16,11 +16,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="stylesm.css">
+  <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../footer.css">
   <link rel="stylesheet" href="categorystyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
   <script src="scriptm.js"></script>
   <title>Categorias</title>
 </head>
@@ -43,7 +42,7 @@
       <!-------------------->
       <!---Logo-->
 
-      <div class="logo">GMA Gifts</div>
+      <div class="logo"><img src="../imgs/brindou.com logo1.png" alt="Brindou.com"/></div>
 
 
 
@@ -59,15 +58,12 @@
       </div>
       </nav>
       <div class="secondbar">
-        <div class="searchbar">
-          <input type="text" placeholder="Buscar por produtos" name="searchb" id="searchb">
-          <button class="btnpesquisa" type="submit" id="searchButton">
+        <form class="searchbar" method="GET" action="mochilas.php">
+          <input type="text" placeholder="Buscar por produtos" name="search" id="searchb">
+          <button type="submit" class="btnpesquisa" id="searchButton">
             <img src="imgs/searchico.webp" alt="Icone de pesquisa" id="iconepesquisa">
           </button>
-          
-
-
-        </div>
+          </form>
       </div> 
         
       <!-- Menu ao clicar -->
@@ -142,24 +138,24 @@
       
       <form class="filter-form">
           <div class="filter-option">
-              <input type="checkbox" id="escolar" name="mochila" value="escolar">
-              <label for="escolar">Mochila Escolar</label>
+              <input type="checkbox" id="escolar" name="mochila" value="1">
+              <label for="escolar">Escritório</label>
           </div>
           <div class="filter-option">
-              <input type="checkbox" id="academica" name="mochila" value="academica">
-              <label for="academica">Mochila Acadêmica</label>
+              <input type="checkbox" id="academica" name="mochila" value="2">
+              <label for="academica">Ecológico</label>
           </div>
           <div class="filter-option">
-              <input type="checkbox" id="viagem" name="mochila" value="viagem">
-              <label for="viagem">Mochila de Viagem</label>
+              <input type="checkbox" id="viagem" name="mochila" value="3">
+              <label for="viagem">Moda</label>
           </div>
           <div class="filter-option">
-              <input type="checkbox" id="esportiva" name="mochila" value="esportiva">
-              <label for="esportiva">Mochila Esportiva</label>
+              <input type="checkbox" id="esportiva" name="mochila" value="4">
+              <label for="esportiva">Utilidades Domésticas</label>
           </div>
           <div class="filter-option">
-              <input type="checkbox" id="executiva" name="mochila" value="executiva">
-              <label for="executiva">Mochila Executiva</label>
+              <input type="checkbox" id="executiva" name="mochila" value="2">
+              <label for="executiva">Sacolas</label>
           </div>
 
       </form>
@@ -271,35 +267,63 @@
           
           }
 
+
+
+
+
         </script>
 
     </summary>
   
   <form class="filter-form">
       <div class="filter-option">
-          <input type="checkbox" id="couro" name="couro" value="couro">
+          <input type="checkbox" id="couro" name="couro" value="10">
           <label for="couro">Couro</label>
       </div>
       <div class="filter-option">
-          <input type="checkbox" id="algodao" name="algodao" value="algodao">
+          <input type="checkbox" id="algodao" name="algodao" value="40">
           <label for="algodao">Algodão</label>
       </div>
       <div class="filter-option">
-          <input type="checkbox" id="la" name="la" value="la">
+          <input type="checkbox" id="la" name="la" value="38">
           <label for="la">Lã</label>
       </div>
       <div class="filter-option">
-          <input type="checkbox" id="poliester" name="poliester" value="poliester">
+          <input type="checkbox" id="poliester" name="poliester" value="37">
           <label for="esportiva">Poliester</label>
       </div>
       <div class="filter-option">
-        <input type="checkbox" id="nylon" name="nylon" value="nylon">
+        <input type="checkbox" id="nylon" name="nylon" value="36">
         <label for="esportiva">Nylon</label>
     </div>
 
   </form>
 </details>
     <button onclick="showResults();" type="submit">Aplicar Filtro</button>
+    <script>
+      function showResults() {
+        const params = new URLSearchParams();
+
+        document.querySelectorAll("input[type='checkbox']:checked").forEach(cb => {
+          // Agrupa os filtros por tipo
+          if (cb.name === "mochila") {
+            params.append("categoria[]", cb.value);
+          }
+          if (["preto","azul","amarelo","branco","roxo","marrom","verde","cinza","laranja","vermelho"].includes(cb.name)) {
+            params.append("cor[]", cb.value);
+          }
+          if (["couro", "algodao", "la", "poliester", "nylon"].includes(cb.name)) {
+            params.append("material[]", cb.value);
+          }
+        });
+
+        // Redireciona para mochilas.php com os filtros na URL
+        window.location.href = "mochilas.php?" + params.toString();
+      }
+</script>
+
+
+
   </div>
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
   <div class="top">Mochilas e bolsas</div> <br />
@@ -332,7 +356,13 @@ include 'index.php';
             img.src = originalSrc;
         });
     });
+
 </script>
+
+
+
+
+
 </div>
 
   </main>

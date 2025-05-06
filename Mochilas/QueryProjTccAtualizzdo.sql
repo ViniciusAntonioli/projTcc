@@ -318,3 +318,19 @@ VALUES
 select*from tblproduto
 
 
+use CatalogoDeBrindes
+
+select * from tblcliente
+
+CREATE TABLE recuperacao_senha (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    id_cliente INT NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    data_expiracao DATETIME NOT NULL,
+    usado BIT DEFAULT 0,
+    FOREIGN KEY (id_cliente) REFERENCES tblcliente(id_cliente)
+);
+
+insert into tblcliente values ('Minha Empresa', 'Minha Empresa', 'Minha Empresa', 'minhaempresa@gmail.com', '$2y$10$eeiTn.QsM63Kn4rgqxmsDODWLlCrmwXQiVpd9.5838PujM9sEhi62', 111111, 11111, getdate(), null,1)
+
+

@@ -3,7 +3,7 @@ include 'conexao.php';
 
 if (isset($_GET['id'])) {
     $id_produto = intval($_GET['id']);
-    $img_num = isset($_GET['img']) && $_GET['img'] == 2 ? 'imagem_2' : 'imagem_1'; // Alterna entre as imagens
+    $img_num = isset($_GET['img']) && $_GET['img'] == 2 ? 'imagem_2' : 'imagem_1'; // Alterna entre as imagens ( se for igual a 2, pega a imagem 2, senão pega a 1)
 
     $sql = "SELECT $img_num FROM tblproduto WHERE id_produto = :id";
     $stmt = $conn->prepare($sql);
@@ -16,13 +16,13 @@ if (isset($_GET['id'])) {
         header("Content-Type: image/jpeg"); // Define o tipo da imagem (pode ser alterado se for outro formato)
         echo $produto[$img_num]; // Exibe a imagem
     } else {
-        // Caso não tenha imagem, exibe uma imagem padrão
+        // Caso não tenha imagem, exibe uma imagem padrão :)
         header("Content-Type: image/jpeg");
-        readfile("imgs/produtos/sem-imagem.jpg"); // Imagem padrão
+        readfile("imgs/image.png"); // Imagem padrão
     }
 } else {
-    // Caso não seja fornecido um id, ou algum erro, fornecemos uma imagem padrão.
     header("Content-Type: image/jpeg");
-    readfile("imgs/produtos/sem-imagem.jpg");
+    readfile("imgs/image.png"); // Imagem padrão
+
 }
 ?>
