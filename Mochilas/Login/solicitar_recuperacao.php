@@ -55,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a href='$link' style='background-color: blue; padding: 6px 8px; color: white; font-weight: bold;'>Recuperar Senha</a>
                 <p><small>Este link expira em 1 hora.</small></p>
             ";
-
             $mail->send();
             $mensagem = "Um link de recuperação foi enviado para seu e-mail.";
         } catch (Exception $e) {

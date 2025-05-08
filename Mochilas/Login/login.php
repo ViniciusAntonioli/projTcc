@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = trim($_POST['pass']);
 
     if (!empty($user) && !empty($pass)) {
-        $sql = "SELECT id_cliente, nome_empresa, senha FROM tblcliente WHERE nome_empresa = :user";
+        $sql = "SELECT id_cliente, nome_empresa, senha, cnpj, telefone FROM tblcliente WHERE nome_empresa = :user";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':user', $user);
         $stmt->execute();
@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($usuario && password_verify($pass, $usuario['senha'])) {
             $_SESSION['user_id'] = $usuario['id_cliente'];
             $_SESSION['name_user'] = $usuario['nome_empresa'];
+            $_SESSION['cnpj'] = $usuario['cnpj'];
+            $_SESSION['telefone'] = $usuario['telefone'];
+            
             header('Location: ../mochilas.php');
             exit();
         } else {
@@ -49,11 +52,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="main">
         <div class="container">
+
             <h1>Login</h1>
             <form method="post" action="login.php">
                 Usuário: <input type="text" name="user" required /> <br /><br />
                 Senha: <input type="password" name="pass" required /> <br /><br />
                 <p>Esqueceu a senha? <a href="solicitar_recuperacao.php">Recuperar Senha</a></p>
+                <p>Não tem uma conta? <a href="contactus.html">Contate-nos</a></p>
                 <?php if (!empty($error)): ?>
                     <p id="wrong" style="color:red;"><?= htmlspecialchars($error) ?></p>
                 <?php endif; ?>

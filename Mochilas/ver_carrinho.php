@@ -34,14 +34,21 @@ $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($produtos as $produto): ?>
             <li>
             <img id="mainImage" width="50px" class="main-image" src="listar_img.php?id=<?= $produto['id_produto']; ?>&img=2" alt="<?= htmlspecialchars($produto['descricao_resumida']); ?>">
+
             
                 <?= htmlspecialchars($produto['descricao_resumida']); ?> - 
                 <?= $_SESSION['carrinho'][$produto['id_produto']]; ?> unidades - 
+                R$ <?= number_format($produto['preco'], 2, ',', '.'); ?> - Total:
                 R$ <?= number_format($produto['preco'] * $_SESSION['carrinho'][$produto['id_produto']], 2, ',', '.'); ?>
-                <a href="remover_carrinho.php?id=<?= $produto['id_produto']; ?>">Remover</a>
+                <a style="color: white; margin-right: 8px;" href="remover_carrinho.php?id=<?= $produto['id_produto']; ?>&tipo=tudo">Remover tudo</a>
+                <form action="remover_carrinho.php" method="POST" style="display:inline;">
+                <input type="hidden" name="id_produto" value="<?= $produto['id_produto']; ?>">
+                <input   type="number" name="quantidade_remover" min="1" max="<?= $_SESSION['carrinho'][$produto['id_produto']]; ?>" value="1" style="width: 60px;">
+                <button style="background-color: red; color: white; border: none; padding: 4px 6px;" type="submit">Remover</button>
+            </form>
                 </li>
         <?php endforeach; ?>
     </ul>
-    <a href="checkout.php">Finalizar Compra</a>
+    <a href="checkout.php">Gerar orçamento</a>
 </body>
 </html>

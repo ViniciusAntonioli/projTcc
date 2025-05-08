@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 500px) {
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Contato</h2>
+        <form action="register.php" method="POST" novalidate>
+            <label for="nome_empresa">Nome da Empresa:</label>
+            <input type="text" name="nome_empresa" id="nome_empresa" required>
+            <div class="error-message" id="error-nome_empresa"></div>
+
+            <label for="razao_social">Razão Social:</label>
+            <input type="text" name="razao_social" id="razao_social" required>
+            <div class="error-message" id="error-razao_social"></div>
+
+            <label for="responsavel">Contato:</label>
+            <input type="text" name="responsavel" id="responsavel" required>
+            <div class="error-message" id="error-responsavel"></div>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <div class="error-message" id="error-email"></div>
+
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" name="cnpj" id="cnpj" maxlength="14" required>
+            <div class="error-message" id="error-cnpj"></div>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" id="telefone">
+            <div class="error-message" id="error-telefone"></div>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+        <p style="text-align: center; margin-top: 20px;">Já possui cadastro? <a href="login.php">Faça login</a></p>
+        <p style="text-align: center; margin-top: 20px;">Voltar para a <a href="../mochilas.php">página inicial</a></p>
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            let valid = true;
+
+
+            // Limpar mensagens de erro anteriores
+            document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+
+            const nomeEmpresa = document.getElementById("nome_empresa").value.trim();
+            const razaoSocial = document.getElementById("razao_social").value.trim();
+            const responsavel = document.getElementById("responsavel").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const cnpj = document.getElementById("cnpj").value.trim();
+            const telefone = document.getElementById("telefone").value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const cnpjRegex = /^\d{14}$/;
+            const telefoneRegex = /^\d{10,}$/;
+
+            if (!nomeEmpresa) {
+                document.getElementById("error-nome_empresa").textContent = "Campo obrigatório.";
+                valid = false;
+            }
+
+            if (!razaoSocial) {
+                document.getElementById("error-razao_social").textContent = "Campo obrigatório.";
+                valid = false;
+            }
+
+            if (!responsavel) {
+                document.getElementById("error-responsavel").textContent = "Campo obrigatório.";
+                valid = false;
+            }
+
+            if (!email) {
+                document.getElementById("error-email").textContent = "Campo obrigatório.";
+                valid = false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById("error-email").textContent = "E-mail inválido.";
+                valid = false;
+            }
+
+            if (!cnpj) {
+                document.getElementById("error-cnpj").textContent = "Campo obrigatório.";
+                valid = false;
+            } else if (!cnpjRegex.test(cnpj)) {
+                document.getElementById("error-cnpj").textContent = "CNPJ deve ter 14 dígitos numéricos.";
+                valid = false;
+            }
+
+            if (telefone && !telefoneRegex.test(telefone)) {
+                document.getElementById("error-telefone").textContent = "Telefone inválido (mínimo 10 dígitos numéricos).";
+                valid = false;
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

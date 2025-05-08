@@ -3,7 +3,7 @@
 $serverName = "DESKTOP-L6F3F9R\SQLEXPRESS"; // Exemplo: "localhost" ou "192.168.1.100"
 $database = "CatalogoDeBrindes";
 $username = "sa"; // Exemplo: "sa"
-$password = "1.Aa1234567";
+$password = "1.Aa1234567"; // Exemplo: "
 
 try {
     // Adicionando TrustServerCertificate para ignorar a verificação SSL

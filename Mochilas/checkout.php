@@ -23,7 +23,7 @@ $html = "
 <style>
     body {
         font-family: Arial, sans-serif;
-        font-size: 12px;
+        font-size: 16px;
         color: #333;
     }
     h1, h2 {
@@ -43,7 +43,7 @@ $html = "
         border: 1px solid #ddd;
     }
     td {
-        padding: 8px;
+        padding: 16px;
         border: 1px solid #ddd;
     }
     .total {
@@ -57,11 +57,26 @@ $html = "
     }
 </style>
 
-<h1>Orçamento de Compra</h1>
-<h2>Empresa: " . htmlspecialchars($_SESSION['name_user']) . "</h2>
-<hr />
 
-<h2>Produtos</h2>
+<table>
+    <tr>
+        <td colspan='5' style='text-align: center;'><h1>Orçamento</h1></td>
+    </tr>
+    <tr>
+        <td>ID:" .htmlspecialchars($_SESSION['user_id']). "</td>
+        <td>Nome empresa: " . htmlspecialchars($_SESSION['name_user']) . "</td>
+        <td>Telefone: " . htmlspecialchars($_SESSION['telefone']) . "</td>
+        <td>Data de emissão: " . date('d/m/Y H:i:s') . "</td>
+        <td>Validade: " . date('d/m/Y H:i:s', strtotime('+60 days')) . "</td>
+    </tr>
+    <tr>
+        <td colspan='4'>CNPJ: " . htmlspecialchars($_SESSION['cnpj']) . "</td>
+        <td>Transportadora: </td>
+    </tr>
+
+    
+</table>
+
 <table>
     <thead>
         <tr>
@@ -90,13 +105,24 @@ foreach ($produtos as $produto) {
 
 $html .= "
         <tr class='total'>
-            <td colspan='3'>Total Geral</td>
+            <td colspan='3'>Total: </td>
             <td>R$ " . number_format($totalGeral, 2, ',', '.') . "</td>
         </tr>
     </tbody>
-</table>
+</table> <p style='margin-top: 20px; text-align: center;'>* Este orçamento é válido por 60 dias a partir da data de emissão.</p>
+<p style='margin-top: 20px; text-align: center;'>* O pagamento deve ser realizado antes da entrega.</p>"
+;
 
-<div class='footer'>Data de emissão: " . date('d/m/Y H:i:s') . "</div>";
+$html .= "<div style='text-align: center; margin-top: 70px;'>
+    <span style='text-decoration: overline; margin-left: 40px;'>Data de saída</span> 
+    <span style='text-decoration: overline; margin-left: 40px;'>Depósito</span>
+    <span style='text-decoration: overline; margin-left: 40px;'>Data de entrega</span>
+    <div style=' margin-left: 180px; border-top: 2px solid black; width: 200px; margin-top: 80px;''>
+    <span style='margin-left: 12px;'>Assinatura do cliente</span>
+</div>
+</div>";
+
+
 
 // Configuração do Dompdf
 $options = new Options();

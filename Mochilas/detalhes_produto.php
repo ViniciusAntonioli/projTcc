@@ -172,8 +172,8 @@ if (isset($_SESSION['user_id'])) {
     let quantidade = parseInt(document.getElementById('quantidade').value);  // Convertendo para inteiro
 
     // Verificando se a quantidade é válida
-    if (quantidade < 1 || quantidade > <?= htmlspecialchars($produto['quantidade_estoque']); ?>) {
-        alert("Quantidade inválida. A quantidade deve ser entre 1 e " + <?= htmlspecialchars($produto['quantidade_estoque']); ?>);
+    if (quantidade < 20 || quantidade > <?= htmlspecialchars($produto['quantidade_estoque']); ?>) {
+        alert("Quantidade inválida. A quantidade deve ser entre 20 e " + <?= htmlspecialchars($produto['quantidade_estoque']); ?>);
         return;
     } else {
         let formData = new FormData();
